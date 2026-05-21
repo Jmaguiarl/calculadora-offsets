@@ -1,22 +1,36 @@
 {
   "name": "Offset Calculator",
   "short_name": "Offsets",
+
   "start_url": "/calculadora-offsets/",
+
   "scope": "/calculadora-offsets/",
+
   "display": "standalone",
+
   "orientation": "portrait",
+
   "background_color": "#00152e",
+
   "theme_color": "#00152e",
+
   "icons": [
+
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+
+      "purpose": "any maskable"
     },
+
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+
+      "purpose": "any maskable"
     }
+
   ]
 }
