@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de Offsets</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(135deg, #00152e, #004b8d);
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            color: white;
+
+        }
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            background:
+                rgba(5, 15, 35, 0.96);
+
+            border-radius: 30px;
+
+            padding: 35px;
+
+            border: 2px solid rgba(0, 180, 255, 0.2);
+
+            box-shadow:
+                0 0 40px rgba(0, 150, 255, 0.35);
+
+        }
+
+        .logo {
+
+            display: block;
+
+            margin: auto;
+
+            width: 500px;
+
+            max-width: 90%;
+
+            margin-bottom: 25px;
+
+            filter:
+                drop-shadow(0 0 15px rgba(0,200,255,0.7));
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            font-size: 55px;
+
+            margin-bottom: 40px;
+
+            color: #66d9ff;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 20px rgba(0,200,255,0.7);
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-spacing: 20px;
+
+        }
+
+        th {
+
+            color: #78dcff;
+
+            font-size: 35px;
+
+        }
+
+        .row-label {
+
+            width: 240px;
+
+            background:
+                rgba(0, 30, 60, 0.8);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            color: #7fe8ff;
+
+            border: 2px solid rgba(0, 180, 255, 0.2);
+
+            box-shadow:
+                0 0 15px rgba(0,150,255,0.15);
+
+        }
+
+        .input-box {
+
+            width: 100%;
+
+            height: 85px;
+
+            background:
+                #07172f;
+
+            border:
+
+                2px solid rgba(0,180,255,0.25);
+
+            border-radius: 22px;
+
+            color: white;
+
+            font-size: 38px;
+
+            text-align: center;
+
+            outline: none;
+
+            transition: 0.25s;
+
+            box-shadow:
+                inset 0 0 10px rgba(0,100,255,0.2);
+
+        }
+
+        .input-box:focus {
+
+            border: 2px solid #00d5ff;
+
+            box-shadow:
+                0 0 20px rgba(0,220,255,0.7);
+
+        }
+
+        .result {
+
+            background:
+                #002e4f;
+
+            color:
+                #00ffff;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 10px cyan;
+
+        }
+
+        .calculate-btn {
+
+            width: 100%;
+
+            height: 90px;
+
+            margin-top: 35px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            font-size: 42px;
+
+            font-weight: bold;
+
+            color: white;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(90deg,
+                    #005eff,
+                    #00a2ff);
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 0 25px rgba(0,180,255,0.5);
+
+        }
+
+        .calculate-btn:hover {
+
+            transform: scale(1.02);
+
+            box-shadow:
+                0 0 40px rgba(0,220,255,0.8);
+
+        }
+
+        .footer {
+
+            margin-top: 35px;
+
+            text-align: center;
+
+            color: #88dfff;
+
+            font-size: 20px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.8;
+
+        }
+
+        @media(max-width: 900px) {
+
+            h1 {
+
+                font-size: 32px;
+
+            }
+
+            .row-label {
+
+                font-size: 16px;
+
+                width: 120px;
+
+            }
+
+            th {
+
+                font-size: 22px;
+
+            }
+
+            .input-box {
+
+                height: 55px;
+
+                font-size: 24px;
+
+            }
+
+            .calculate-btn {
+
+                height: 65px;
+
+                font-size: 28px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="ersa_logo.png" class="logo">
+
+        <h1>CALCULADORA DE OFFSETS</h1>
+
+        <table>
+
+            <tr>
+
+                <th></th>
+
+                <th>X</th>
+
+                <th>Y</th>
+
+                <th>Z</th>
+
+            </tr>
+
+            <!-- SET VALUE -->
+
+            <tr>
+
+                <td class="row-label">
+
+                    VALOR SET
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="setx"
+                        value="40">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="sety"
+                        value="45">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="setz"
+                        value="7">
+
+                </td>
+
+            </tr>
+
+            <!-- ACTUAL VALUE -->
+
+            <tr>
+
+                <td class="row-label">
+
+                    VALOR ACTUAL
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="actualx">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="actualy">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="actualz">
+
+                </td>
+
+            </tr>
+
+            <!-- OFFSET ACTUAL -->
+
+            <tr>
+
+                <td class="row-label">
+
+                    OFFSET ACTUAL
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="offsetx">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="offsety">
+
+                </td>
+
+                <td>
+
+                    <input class="input-box"
+                        id="offsetz">
+
+                </td>
+
+            </tr>
+
+            <!-- NUEVO OFFSET -->
+
+            <tr>
+
+                <td class="row-label">
+
+                    NUEVO OFFSET
+
+                </td>
+
+                <td>
+
+                    <input class="input-box result"
+                        id="newx"
+                        readonly>
+
+                </td>
+
+                <td>
+
+                    <input class="input-box result"
+                        id="newy"
+                        readonly>
+
+                </td>
+
+                <td>
+
+                    <input class="input-box result"
+                        id="newz"
+                        readonly>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+        <button class="calculate-btn"
+            onclick="calculate()">
+
+            CALCULAR
+
+        </button>
+
+        <div class="footer">
+
+            KMX
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function calculate() {
+
+            let sx = parseFloat(
+                document.getElementById("setx").value);
+
+            let sy = parseFloat(
+                document.getElementById("sety").value);
+
+            let sz = parseFloat(
+                document.getElementById("setz").value);
+
+            let ax = parseFloat(
+                document.getElementById("actualx").value);
+
+            let ay = parseFloat(
+                document.getElementById("actualy").value);
+
+            let az = parseFloat(
+                document.getElementById("actualz").value);
+
+            let ox = parseFloat(
+                document.getElementById("offsetx").value);
+
+            let oy = parseFloat(
+                document.getElementById("offsety").value);
+
+            let oz = parseFloat(
+                document.getElementById("offsetz").value);
+
+            let nx = ox + (ax - sx);
+
+            let ny = oy + (ay - sy);
+
+            let nz = oz + (az - sz);
+
+            document.getElementById("newx").value =
+                nx.toFixed(3);
+
+            document.getElementById("newy").value =
+                ny.toFixed(3);
+
+            document.getElementById("newz").value =
+                nz.toFixed(3);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
