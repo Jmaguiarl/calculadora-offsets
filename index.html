@@ -266,8 +266,6 @@
 
         }
 
-        /* MOBILE */
-
         @media(max-width: 700px) {
 
             h1 {
@@ -360,9 +358,8 @@
 
                     <input class="input-box"
                         id="setx"
-                        type="number"
+                        type="text"
                         inputmode="decimal"
-                        step="any"
                         value="40">
 
                 </td>
@@ -371,9 +368,8 @@
 
                     <input class="input-box"
                         id="sety"
-                        type="number"
+                        type="text"
                         inputmode="decimal"
-                        step="any"
                         value="45">
 
                 </td>
@@ -382,9 +378,8 @@
 
                     <input class="input-box"
                         id="setz"
-                        type="number"
+                        type="text"
                         inputmode="decimal"
-                        step="any"
                         value="7">
 
                 </td>
@@ -405,9 +400,8 @@
 
                     <input class="input-box"
                         id="actualx"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -415,9 +409,8 @@
 
                     <input class="input-box"
                         id="actualy"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -425,9 +418,8 @@
 
                     <input class="input-box"
                         id="actualz"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -447,9 +439,8 @@
 
                     <input class="input-box"
                         id="offsetx"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -457,9 +448,8 @@
 
                     <input class="input-box"
                         id="offsety"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -467,9 +457,8 @@
 
                     <input class="input-box"
                         id="offsetz"
-                        type="number"
-                        inputmode="decimal"
-                        step="any">
+                        type="text"
+                        inputmode="decimal">
 
                 </td>
 
@@ -489,6 +478,7 @@
 
                     <input class="input-box result"
                         id="newx"
+                        type="text"
                         readonly
                         value="0.0">
 
@@ -498,6 +488,7 @@
 
                     <input class="input-box result"
                         id="newy"
+                        type="text"
                         readonly
                         value="0.0">
 
@@ -507,6 +498,7 @@
 
                     <input class="input-box result"
                         id="newz"
+                        type="text"
                         readonly
                         value="0.0">
 
@@ -558,7 +550,7 @@
             let oy = getValue("offsety");
             let oz = getValue("offsetz");
 
-            /* ERSA ORIGINAL FORMULA */
+            /* ORIGINAL ERSA FORMULA */
 
             let nx = ox + (sx - ax);
 
