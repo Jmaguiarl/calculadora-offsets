@@ -37,20 +37,24 @@
 
             color: white;
 
+            overflow-x: hidden;
+
         }
 
         .container {
 
             width: 100%;
 
-            max-width: 1100px;
+            max-width: 700px;
+
+            margin: auto;
 
             background:
                 rgba(5, 15, 35, 0.96);
 
             border-radius: 30px;
 
-            padding: 35px;
+            padding: 25px;
 
             border: 2px solid rgba(0, 180, 255, 0.2);
 
@@ -65,11 +69,11 @@
 
             margin: auto;
 
-            width: 500px;
+            width: 320px;
 
             max-width: 90%;
 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
 
             filter:
                 drop-shadow(0 0 15px rgba(0,200,255,0.7));
@@ -80,9 +84,9 @@
 
             text-align: center;
 
-            font-size: 55px;
+            font-size: 50px;
 
-            margin-bottom: 40px;
+            margin-bottom: 35px;
 
             color: #66d9ff;
 
@@ -97,7 +101,7 @@
 
             width: 100%;
 
-            border-spacing: 20px;
+            border-spacing: 12px;
 
         }
 
@@ -105,13 +109,13 @@
 
             color: #78dcff;
 
-            font-size: 35px;
+            font-size: 32px;
 
         }
 
         .row-label {
 
-            width: 240px;
+            width: 150px;
 
             background:
                 rgba(0, 30, 60, 0.8);
@@ -120,7 +124,7 @@
 
             text-align: center;
 
-            font-size: 28px;
+            font-size: 20px;
 
             font-weight: bold;
 
@@ -131,17 +135,17 @@
             box-shadow:
                 0 0 15px rgba(0,150,255,0.15);
 
-            padding: 15px;
+            padding: 10px;
 
         }
 
         .input-box {
 
-            width: 90px;
+            width: 75px;
 
-            min-width: 90px;
+            min-width: 75px;
 
-            height: 85px;
+            height: 75px;
 
             background:
                 #07172f;
@@ -153,7 +157,7 @@
 
             color: white;
 
-            font-size: 26px;
+            font-size: 20px;
 
             text-align: center;
 
@@ -194,15 +198,15 @@
 
             width: 100%;
 
-            height: 90px;
+            height: 85px;
 
-            margin-top: 35px;
+            margin-top: 30px;
 
             border: none;
 
             border-radius: 25px;
 
-            font-size: 42px;
+            font-size: 38px;
 
             font-weight: bold;
 
@@ -235,13 +239,13 @@
 
         .footer {
 
-            margin-top: 35px;
+            margin-top: 30px;
 
             text-align: center;
 
             color: #88dfff;
 
-            font-size: 20px;
+            font-size: 18px;
 
             letter-spacing: 3px;
 
@@ -249,83 +253,43 @@
 
         }
 
-        /* RESPONSIVE */
+        /* MOBILE */
 
         @media(max-width: 900px) {
 
             h1 {
-                font-size: 34px;
+                font-size: 30px;
             }
 
             .row-label {
 
-                font-size: 16px;
+                width: 110px;
 
-                width: 120px;
+                font-size: 14px;
 
-                padding: 10px;
+                padding: 8px;
 
             }
 
             th {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .input-box {
 
-                width: 80px;
+                width: 70px;
 
-                min-width: 80px;
+                min-width: 70px;
 
                 height: 70px;
 
-                font-size: 22px;
+                font-size: 18px;
 
             }
 
             .calculate-btn {
 
                 height: 70px;
-
-                font-size: 30px;
-
-            }
-
-        }
-
-        /* MODO VERTICAL */
-
-        @media screen and (orientation: portrait) {
-
-            .container {
-                padding: 20px;
-            }
-
-            table {
-                border-spacing: 10px;
-            }
-
-            .input-box {
-
-                width: 85px;
-
-                min-width: 85px;
-
-                height: 78px;
-
-                font-size: 22px;
-
-            }
-
-            .row-label {
-
-                font-size: 14px;
-
-                width: 110px;
-
-            }
-
-            h1 {
 
                 font-size: 28px;
 
@@ -354,6 +318,8 @@
                 <th>Z</th>
             </tr>
 
+            <!-- SET -->
+
             <tr>
 
                 <td class="row-label">
@@ -364,7 +330,7 @@
                     <input class="input-box"
                         id="setx"
                         type="number"
-                        step="0.001"
+                        step="0.1"
                         value="40">
                 </td>
 
@@ -372,7 +338,7 @@
                     <input class="input-box"
                         id="sety"
                         type="number"
-                        step="0.001"
+                        step="0.1"
                         value="45">
                 </td>
 
@@ -380,11 +346,13 @@
                     <input class="input-box"
                         id="setz"
                         type="number"
-                        step="0.001"
+                        step="0.1"
                         value="7">
                 </td>
 
             </tr>
+
+            <!-- ACTUAL -->
 
             <tr>
 
@@ -396,24 +364,26 @@
                     <input class="input-box"
                         id="actualx"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
                 <td>
                     <input class="input-box"
                         id="actualy"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
                 <td>
                     <input class="input-box"
                         id="actualz"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
             </tr>
+
+            <!-- OFFSET -->
 
             <tr>
 
@@ -425,24 +395,26 @@
                     <input class="input-box"
                         id="offsetx"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
                 <td>
                     <input class="input-box"
                         id="offsety"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
                 <td>
                     <input class="input-box"
                         id="offsetz"
                         type="number"
-                        step="0.001">
+                        step="0.1">
                 </td>
 
             </tr>
+
+            <!-- RESULT -->
 
             <tr>
 
@@ -505,9 +477,9 @@
             let ny = oy + (ay - sy);
             let nz = oz + (az - sz);
 
-            document.getElementById("newx").value = nx.toFixed(3);
-            document.getElementById("newy").value = ny.toFixed(3);
-            document.getElementById("newz").value = nz.toFixed(3);
+            document.getElementById("newx").value = nx.toFixed(1);
+            document.getElementById("newy").value = ny.toFixed(1);
+            document.getElementById("newz").value = nz.toFixed(1);
 
         }
 
