@@ -28,9 +28,11 @@
             font-family: Arial, Helvetica, sans-serif;
 
             background:
-                linear-gradient(135deg,
+                linear-gradient(
+                    135deg,
                     #00152e,
-                    #004b8d);
+                    #004b8d
+                );
 
             min-height: 100vh;
 
@@ -86,7 +88,9 @@
             margin-bottom: 25px;
 
             filter:
-                drop-shadow(0 0 15px rgba(0,200,255,0.7));
+                drop-shadow(
+                    0 0 15px rgba(0,200,255,0.7)
+                );
 
         }
 
@@ -232,7 +236,8 @@
                 linear-gradient(
                     90deg,
                     #005eff,
-                    #00a2ff);
+                    #00a2ff
+                );
 
             transition: 0.3s;
 
@@ -483,7 +488,8 @@
 
                     <input class="input-box result"
                         id="newx"
-                        readonly>
+                        readonly
+                        value="0.0">
 
                 </td>
 
@@ -491,7 +497,8 @@
 
                     <input class="input-box result"
                         id="newy"
-                        readonly>
+                        readonly
+                        value="0.0">
 
                 </td>
 
@@ -499,7 +506,8 @@
 
                     <input class="input-box result"
                         id="newz"
-                        readonly>
+                        readonly
+                        value="0.0">
 
                 </td>
 
@@ -524,58 +532,38 @@
 
     <script>
 
+        function getValue(id) {
+
+            let value =
+                parseFloat(
+                    document.getElementById(id).value
+                );
+
+            return isNaN(value) ? 0 : value;
+
+        }
+
         function calculate() {
 
-            let sx =
-                parseFloat(
-                    document.getElementById("setx").value
-                ) || 0;
+            let sx = getValue("setx");
+            let sy = getValue("sety");
+            let sz = getValue("setz");
 
-            let sy =
-                parseFloat(
-                    document.getElementById("sety").value
-                ) || 0;
+            let ax = getValue("actualx");
+            let ay = getValue("actualy");
+            let az = getValue("actualz");
 
-            let sz =
-                parseFloat(
-                    document.getElementById("setz").value
-                ) || 0;
+            let ox = getValue("offsetx");
+            let oy = getValue("offsety");
+            let oz = getValue("offsetz");
 
-            let ax =
-                parseFloat(
-                    document.getElementById("actualx").value
-                ) || 0;
+            /* ORIGINAL ERSA FORMULA */
 
-            let ay =
-                parseFloat(
-                    document.getElementById("actualy").value
-                ) || 0;
+            let nx = ox + (sx - ax);
 
-            let az =
-                parseFloat(
-                    document.getElementById("actualz").value
-                ) || 0;
+            let ny = oy + (sy - ay);
 
-            let ox =
-                parseFloat(
-                    document.getElementById("offsetx").value
-                ) || 0;
-
-            let oy =
-                parseFloat(
-                    document.getElementById("offsety").value
-                ) || 0;
-
-            let oz =
-                parseFloat(
-                    document.getElementById("offsetz").value
-                ) || 0;
-
-            let nx = ox + (ax - sx);
-
-            let ny = oy + (ay - sy);
-
-            let nz = oz + (az - sz);
+            let nz = oz + (sz - az);
 
             document.getElementById("newx").value =
                 nx.toFixed(1);
