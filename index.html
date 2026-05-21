@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Calculadora de Offsets</title>
+
     <link rel="manifest" href="manifest.json">
 
     <style>
 
         * {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
 
         body {
@@ -76,7 +75,6 @@
                 drop-shadow(0 0 15px rgba(0,200,255,0.7));
 
         }
-        
 
         h1 {
 
@@ -133,11 +131,15 @@
             box-shadow:
                 0 0 15px rgba(0,150,255,0.15);
 
+            padding: 15px;
+
         }
 
         .input-box {
 
-            width: 100%;
+            width: 90px;
+
+            min-width: 90px;
 
             height: 85px;
 
@@ -145,14 +147,13 @@
                 #07172f;
 
             border:
-
                 2px solid rgba(0,180,255,0.25);
 
             border-radius: 22px;
 
             color: white;
 
-            font-size: 38px;
+            font-size: 26px;
 
             text-align: center;
 
@@ -210,9 +211,11 @@
             cursor: pointer;
 
             background:
-                linear-gradient(90deg,
+                linear-gradient(
+                    90deg,
                     #005eff,
-                    #00a2ff);
+                    #00a2ff
+                );
 
             transition: 0.3s;
 
@@ -246,12 +249,12 @@
 
         }
 
+        /* RESPONSIVE */
+
         @media(max-width: 900px) {
 
             h1 {
-
-                font-size: 32px;
-
+                font-size: 34px;
             }
 
             .row-label {
@@ -260,25 +263,69 @@
 
                 width: 120px;
 
+                padding: 10px;
+
             }
 
             th {
+                font-size: 24px;
+            }
+
+            .input-box {
+
+                width: 80px;
+
+                min-width: 80px;
+
+                height: 70px;
 
                 font-size: 22px;
 
             }
 
-            .input-box {
+            .calculate-btn {
 
-                height: 55px;
+                height: 70px;
 
-                font-size: 24px;
+                font-size: 30px;
 
             }
 
-            .calculate-btn {
+        }
 
-                height: 65px;
+        /* MODO VERTICAL */
+
+        @media screen and (orientation: portrait) {
+
+            .container {
+                padding: 20px;
+            }
+
+            table {
+                border-spacing: 10px;
+            }
+
+            .input-box {
+
+                width: 85px;
+
+                min-width: 85px;
+
+                height: 78px;
+
+                font-size: 22px;
+
+            }
+
+            .row-label {
+
+                font-size: 14px;
+
+                width: 110px;
+
+            }
+
+            h1 {
 
                 font-size: 28px;
 
@@ -286,21 +333,6 @@
 
         }
 
-
-}
-
-@media screen and (orientation: portrait) 
-        {
-
-  input {
-    width: 72px;
-    height: 78px;
-    font-size: 24px;
-    padding: 5px;
-    text-align: center;
-  }
-
-}
     </style>
 
 </head>
@@ -316,151 +348,124 @@
         <table>
 
             <tr>
-
                 <th></th>
-
                 <th>X</th>
-
                 <th>Y</th>
-
                 <th>Z</th>
-
             </tr>
-
-            <!-- SET VALUE -->
 
             <tr>
 
                 <td class="row-label">
-
                     VALOR SET
-
                 </td>
 
                 <td>
-
                     <input class="input-box"
                         id="setx"
+                        type="number"
+                        step="0.001"
                         value="40">
-
                 </td>
 
                 <td>
-
                     <input class="input-box"
                         id="sety"
+                        type="number"
+                        step="0.001"
                         value="45">
-
                 </td>
 
                 <td>
-
                     <input class="input-box"
                         id="setz"
+                        type="number"
+                        step="0.001"
                         value="7">
-
                 </td>
 
             </tr>
 
-            <!-- ACTUAL VALUE -->
-
             <tr>
 
                 <td class="row-label">
-
                     VALOR ACTUAL
-
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="actualx">
-
+                        id="actualx"
+                        type="number"
+                        step="0.001">
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="actualy">
-
+                        id="actualy"
+                        type="number"
+                        step="0.001">
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="actualz">
-
+                        id="actualz"
+                        type="number"
+                        step="0.001">
                 </td>
 
             </tr>
 
-            <!-- OFFSET ACTUAL -->
-
             <tr>
 
                 <td class="row-label">
-
                     OFFSET ACTUAL
-
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="offsetx">
-
+                        id="offsetx"
+                        type="number"
+                        step="0.001">
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="offsety">
-
+                        id="offsety"
+                        type="number"
+                        step="0.001">
                 </td>
 
                 <td>
-
                     <input class="input-box"
-                        id="offsetz">
-
+                        id="offsetz"
+                        type="number"
+                        step="0.001">
                 </td>
 
             </tr>
 
-            <!-- NUEVO OFFSET -->
-
             <tr>
 
                 <td class="row-label">
-
                     NUEVO OFFSET
-
                 </td>
 
                 <td>
-
                     <input class="input-box result"
                         id="newx"
                         readonly>
-
                 </td>
 
                 <td>
-
                     <input class="input-box result"
                         id="newy"
                         readonly>
-
                 </td>
 
                 <td>
-
                     <input class="input-box result"
                         id="newz"
                         readonly>
-
                 </td>
 
             </tr>
@@ -475,9 +480,7 @@
         </button>
 
         <div class="footer">
-
             KMX
-
         </div>
 
     </div>
@@ -486,47 +489,25 @@
 
         function calculate() {
 
-            let sx = parseFloat(
-                document.getElementById("setx").value);
+            let sx = parseFloat(document.getElementById("setx").value) || 0;
+            let sy = parseFloat(document.getElementById("sety").value) || 0;
+            let sz = parseFloat(document.getElementById("setz").value) || 0;
 
-            let sy = parseFloat(
-                document.getElementById("sety").value);
+            let ax = parseFloat(document.getElementById("actualx").value) || 0;
+            let ay = parseFloat(document.getElementById("actualy").value) || 0;
+            let az = parseFloat(document.getElementById("actualz").value) || 0;
 
-            let sz = parseFloat(
-                document.getElementById("setz").value);
-
-            let ax = parseFloat(
-                document.getElementById("actualx").value);
-
-            let ay = parseFloat(
-                document.getElementById("actualy").value);
-
-            let az = parseFloat(
-                document.getElementById("actualz").value);
-
-            let ox = parseFloat(
-                document.getElementById("offsetx").value);
-
-            let oy = parseFloat(
-                document.getElementById("offsety").value);
-
-            let oz = parseFloat(
-                document.getElementById("offsetz").value);
+            let ox = parseFloat(document.getElementById("offsetx").value) || 0;
+            let oy = parseFloat(document.getElementById("offsety").value) || 0;
+            let oz = parseFloat(document.getElementById("offsetz").value) || 0;
 
             let nx = ox + (ax - sx);
-
             let ny = oy + (ay - sy);
-
             let nz = oz + (az - sz);
 
-            document.getElementById("newx").value =
-                nx.toFixed(3);
-
-            document.getElementById("newy").value =
-                ny.toFixed(3);
-
-            document.getElementById("newz").value =
-                nz.toFixed(3);
+            document.getElementById("newx").value = nx.toFixed(3);
+            document.getElementById("newy").value = ny.toFixed(3);
+            document.getElementById("newz").value = nz.toFixed(3);
 
         }
 
